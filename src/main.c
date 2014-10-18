@@ -149,6 +149,8 @@ void system_logger(void *pvParameters)
 
 int main()
 {
+	uint8_t testint=12;
+
 	init_rs232();
 	enable_rs232_interrupts();
 	enable_rs232();
@@ -164,6 +166,18 @@ int main()
 	/* Add for serial input 
 	 * Reference: www.freertos.org/a00116.html */
 	serial_rx_queue = xQueueCreate(1, sizeof(char));
+
+	/* Test zone */
+	// testint =  fs_open("romfs/test.txt", 0, O_RDONLY); /*fs_open is working if we input correct name
+
+
+
+
+	// fio_printf(1, "\rWelcome to FreeRTOS Shell %d  \r\n",testint);
+	// fio_printf(1, "\rWelcome to FreeRTOS Shell\r\n");
+
+
+
 
 	/* Create a task to output text read from romfs. */
 	xTaskCreate(command_prompt,
