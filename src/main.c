@@ -149,7 +149,7 @@ void system_logger(void *pvParameters)
 
 int main()
 {
-	uint8_t testint=12;
+	//uint8_t testint=12;
 
 	init_rs232();
 	enable_rs232_interrupts();
